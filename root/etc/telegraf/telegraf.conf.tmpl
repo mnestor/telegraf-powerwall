@@ -1,0 +1,38 @@
+[[outputs.influxdb]]
+  urls = ["http://${INFLUX_DB}"]
+  database = "powerwall" # or whatever you want to name the DB
+  skip_database_creation = true
+  # retention_policy = ""
+  # write_consistency = "any"
+  # timeout = "5s"
+  # username = "telegraf"
+  # password = "metricsmetricsmetricsmetrics"
+  # user_agent = "telegraf"
+  # udp_payload = "512B"
+  # tls_ca = "/etc/telegraf/ca.pem"
+  # tls_cert = "/etc/telegraf/cert.pem"
+  # tls_key = "/etc/telegraf/key.pem"
+  # insecure_skip_verify = false
+  # http_headers = {"X-Special-Header" = "Special-Value"}
+  # content_encoding = "identity"
+  # influx_uint_support = false
+
+[[inputs.http]]
+   urls = [
+    "https://fcc-weather-api.glitch.me/api/current?lat=39.13379557446606&lon=-77.2012965171598"
+   ]
+    method = "GET"
+    insecure_skip_verify = true
+    timeout = "5s"
+    interval = "300s"
+    data_format = "json"
+    name_override = "weather"
+
+[[inputs.http]]
+  urls = [
+    "https://${POWERWALL_IP}/api/meters/aggregates",
+    "https://${POWERWALL_IP}/api/system_status/soe",
+    "https://${POWERWALL_IP}/api/meters/solar",
+    "https://${POWERWALL_IP}/api/sitemaster",
+    "https://${POWERWALL_IP}/api/system_status/grid_status",
+    "https://${POWERWALL_IP}/api/status"
