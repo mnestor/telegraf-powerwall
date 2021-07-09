@@ -7,7 +7,7 @@ RUN apk add --update-cache \
   && mkdir -p /etc/default \
   && rm -rf /var/cache/apk/*
 
-ENV INFLUX_DB=tasks.monitor_influxdb:8086 \
+ENV INFLUX_DB=FAIL \
     POWERWALL_PASSWORD=FAIL \
     COOKIE_FILE=/var/tmp/PWcookie.txt \
     POWERWALL_IP=powerwall

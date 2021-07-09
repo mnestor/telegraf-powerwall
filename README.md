@@ -6,7 +6,7 @@ I had been doing this with a multiline command on the main telegraf image but wa
 
 ## Credits ##
 
-This uses a modified version of a script from [@Vince Loschiavo](https://github.com/vloschiavo): https://github.com/vloschiavo/powerwall2/blob/master/samples/powerwallstats.sh
+This uses a modified version of a script from [@Vince Loschiavo](https://github.com/vloschiavo): [powerwallstats.sh](https://github.com/vloschiavo/powerwall2/blob/master/samples/powerwallstats.sh)
 
 At this point I've forgotten where I got the telegraf config, if/when I remember I'll update this.
 
