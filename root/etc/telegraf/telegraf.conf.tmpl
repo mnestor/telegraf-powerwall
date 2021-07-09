@@ -18,15 +18,15 @@
   # influx_uint_support = false
 
 [[inputs.http]]
-   urls = [
+  urls = [
     "https://fcc-weather-api.glitch.me/api/current?lat=39.13379557446606&lon=-77.2012965171598"
-   ]
-    method = "GET"
-    insecure_skip_verify = true
-    timeout = "5s"
-    interval = "300s"
-    data_format = "json"
-    name_override = "weather"
+  ]
+  method = "GET"
+  insecure_skip_verify = true
+  timeout = "5s"
+  interval = "300s"
+  data_format = "json"
+  name_override = "weather"
 
 [[inputs.http]]
   urls = [
@@ -36,4 +36,8 @@
     "https://${POWERWALL_IP}/api/sitemaster",
     "https://${POWERWALL_IP}/api/system_status/grid_status",
     "https://${POWERWALL_IP}/api/status"
-
+  ]
+  method = "GET"
+  insecure_skip_verify = true
+  timeout = "5s"
+  data_format = "json"
