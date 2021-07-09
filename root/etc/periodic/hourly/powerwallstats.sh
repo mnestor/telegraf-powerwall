@@ -35,7 +35,7 @@
 #######################################################
 # You'll want to change these to match your environment
 POWERWALLIP="${POWERWALL_IP:-powerwall}"
-PASSWORD='${POWERWALL_PASSWORD}'
+PASSWORD="${POWERWALL_PASSWORD}"
 
 
 #######################################################
