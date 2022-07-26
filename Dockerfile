@@ -1,4 +1,4 @@
-FROM telegraf:1.22.3-alpine
+FROM telegraf:1.23.3-alpine
 
 RUN apk add --update-cache \
     busybox-initscripts \
